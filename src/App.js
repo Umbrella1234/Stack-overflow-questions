@@ -14,7 +14,7 @@ class App extends Component {
     hasMore: true
   };
 
-  async componentDidMount() {
+  componentDidMount() {
     this.getQuestions();
   }
 
