@@ -8,6 +8,7 @@ export const getQuestions = (page) =>
       site: "stackoverflow",
       page,
       order: "desc",
+      pageSize: 15,
       sort: "creation",
       filter: 'withbody'
     }
