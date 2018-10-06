@@ -40,7 +40,7 @@ class App extends Component {
 
   render() {
     const { questions, hasMore, openedQuestionId } = this.state;
-    const openedQuestion = questions.find(
+    const openQuestion= questions.find(
       question => question.question_id === openedQuestionId
     );
 
@@ -55,7 +55,7 @@ class App extends Component {
                 hasMore={hasMore}
                 loader={<Loader />}
               >
-                <Table hover>
+                <Table hover bordered>
                   <thead>
                     <tr>
                       <th>Author</th>
@@ -81,8 +81,9 @@ class App extends Component {
         )}
         {openedQuestionId && (
           <QuestionModal
-            title={openedQuestion.title}
-            body={openedQuestion.body}
+            title={openQuestion.title}
+            body={openQuestion.body}
+            link={openQuestion.link}
             isOpen={!!openedQuestionId}
             onClose={this.closeQuestion}
           />
