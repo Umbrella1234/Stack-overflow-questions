@@ -18,16 +18,17 @@ class App extends Component {
     this.getQuestions();
   }
 
-  getQuestions = async () => {
+  getQuestions = () => {
     const { pageNum, questions } = this.state;
-    const {
-      data: { items: fetchedQuestions, has_more }
-    } = await getQuestions(pageNum);
-    this.setState({
-      questions: [...questions, ...fetchedQuestions],
-      pageNum: pageNum + 1,
-      hasMore: has_more
-    });
+    getQuestions(pageNum)
+      .then(({ data: { items: fetchedQuestions, has_more } }) => {
+        this.setState({
+          questions: [...questions, ...fetchedQuestions],
+          pageNum: pageNum + 1,
+          hasMore: has_more
+        });
+      })
+      .catch(() => alert("error loading data!"));
   };
 
   openQuestion = questionId => {
@@ -40,7 +41,7 @@ class App extends Component {
 
   render() {
     const { questions, hasMore, openedQuestionId } = this.state;
-    const openQuestion= questions.find(
+    const openQuestion = questions.find(
       question => question.question_id === openedQuestionId
     );
 
