@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.2/workbox-sw.js");
 
 importScripts(
-  "/Stack-overflow-questions/precache-manifest.26325bc0adbede3c79dfc2a63c266288.js"
+  "/Stack-overflow-questions/precache-manifest.d15f5d6d1ded9ee5c7c5131a3ba337aa.js"
 );
 
 workbox.clientsClaim();
