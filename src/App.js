@@ -80,15 +80,13 @@ class App extends Component {
         ) : (
           <Loader isCentered />
         )}
-        {openedQuestionId && (
-          <QuestionModal
-            title={openQuestion.title}
-            body={openQuestion.body}
-            link={openQuestion.link}
-            isOpen={!!openedQuestionId}
-            onClose={this.closeQuestion}
-          />
-        )}
+        <QuestionModal
+          title={openQuestion.title}
+          body={openQuestion.body}
+          link={openQuestion.link}
+          isOpen={!!openedQuestionId}
+          onClose={this.closeQuestion}
+        />
       </Container>
     );
   }
