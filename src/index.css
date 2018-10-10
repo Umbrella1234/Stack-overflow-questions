@@ -12,3 +12,11 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+/* 
+question body is embedded as html
+this line is needed so that an image doesn't leave modal boundaries
+*/
+img {
+  width: 100%;
+}
